@@ -1,0 +1,11 @@
+.profile_icon{
+    margin: 0 auto;
+    border: solid 1px;
+    width: 50px;
+}
+
+.profile_name{
+    margin: 0 auto;
+    border: solid 1px;
+    text-align: center;
+}

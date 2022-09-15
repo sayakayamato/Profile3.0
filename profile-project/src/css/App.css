@@ -1,0 +1,15 @@
+.phone_size{
+    width: 390px;
+    height: 844px;
+    border: solid 1px;
+    margin: 0 auto;
+    background: rgb(20,34,70);
+    background: linear-gradient(0deg, rgba(20,34,70,0.64) 0%, rgba(73,42,84,1) 100%);
+    color: white;
+}
+
+
+.under_nav_bar{
+    position: absolute;
+    bottom: 0;
+}
