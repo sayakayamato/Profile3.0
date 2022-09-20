@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import "./css/App.css";
-import { MenuBar } from './MenuBar';
 import { Flex, Spacer } from '@chakra-ui/react'
 import { ProfileIcon } from './ProfileIcon';
 import { UnderTabBar } from './UnderTabBar';
@@ -14,7 +13,7 @@ function App() {
           <Flex>
             Profile3.0
             <Spacer />
-            <MenuBar />
+            ここにアイコン
           </Flex>
         </div>
 
