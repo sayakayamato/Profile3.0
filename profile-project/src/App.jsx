@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import "./css/App.css";
 import { Flex, Spacer } from '@chakra-ui/react'
 // import { UnderTabBar } from './UnderTabBar';
-import { RouterConfig } from './RoutingConfig';
+import { RouterConfig } from './RouterConfig';
 
 
 
