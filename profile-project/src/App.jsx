@@ -1,36 +1,34 @@
 import React from 'react';
+import { BrowserRouter, Link, } from "react-router-dom";
 import { ChakraProvider } from '@chakra-ui/react';
 import "./css/App.css";
 import { Flex, Spacer } from '@chakra-ui/react'
-import { ProfileIcon } from './ProfileIcon';
-import { UnderTabBar } from './UnderTabBar';
+// import { UnderTabBar } from './UnderTabBar';
+import { RouterConfig } from './RoutingConfig';
+
+
 
 function App() {
   return (
     <ChakraProvider>
-      <div className='phone_size'>
-        <div className='top_bar'>
-          <Flex>
-            Profile3.0
-            <Spacer />
-            ここにアイコン
-          </Flex>
-        </div>
+      <BrowserRouter>
+        {/* {常に表示する部分} */}
+        <div className='phone_size'>
+          <div className='top_bar'>
+            <Flex>
+              Profile3.0
+              <Spacer />
 
-        <div className='profile_info'>
-          <div className='profile_icon'>
-            <ProfileIcon />
+              <Link to="/MyProfilePage">profileページに移動</Link>
+            </Flex>
           </div>
-          <div className='profile_name'>
-            sayaka yamato
-          </div>
+
+          <RouterConfig />
+          
         </div>
 
-        <div className='under_tab_bar'>
-        <UnderTabBar />
-        </div>
-      </div>
 
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

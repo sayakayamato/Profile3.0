@@ -1,6 +1,9 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { FeedContents } from './FeedContents'
+import { FriendsContents } from './FriendsContents'
 import {HomeContents} from './HomeContents'
+import { NewFriendModal } from './NewFriendModal'
+
 
 
 export function UnderTabBar() {
@@ -15,7 +18,9 @@ export function UnderTabBar() {
                         <FeedContents />
                     </TabPanel>
                     <TabPanel>
-                        <p>three!</p>
+                        <p className='friend'>Friend</p>
+                        <FriendsContents />
+                        <NewFriendModal />
                     </TabPanel>
                 </TabPanels>
                 <TabList className='under_nav_bar'>
@@ -23,7 +28,6 @@ export function UnderTabBar() {
                     <Tab color={"yellow.50"}>Feed</Tab>
                     <Tab color={"yellow.50"}>Friend</Tab>
                 </TabList>
-                
             </Tabs>
         </>
     )

@@ -1,6 +1,6 @@
 .phone_size{
     width: 390px;
-    height: 844px;
+    height: 830px;
     border: solid 1px;
     margin: 0 auto;
     background: rgb(20,34,70);
@@ -12,4 +12,41 @@
 .under_nav_bar{
     position: absolute;
     bottom: 0;
+}
+
+.home_greed{
+    margin-top: 100px;
+}
+
+.q_category{
+    margin-top: 50px;
+}
+
+
+
+.friend{
+    font-size: 40px;
+    margin:  30px;
+    text-align: center;
+}
+
+.friend_component{
+    /* border: 1px solid ; */
+    width: 250px;
+    height: 50px;
+    /* margin- */
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.friend_photo{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: gray;
+    text-align: center;
+}
+
+.friend_name{
+    margin: 0 auto;
 }
