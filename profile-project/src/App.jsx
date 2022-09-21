@@ -32,5 +32,6 @@ function App() {
     </ChakraProvider>
   );
 }
+// {さとるだよ}
 
 export default App;
