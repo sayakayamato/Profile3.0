@@ -16,7 +16,7 @@ function App() {
         <div className='phone_size'>
           <div className='top_bar'>
             <Flex>
-              Profile3.0
+              <Link to="/">Profile3.0</Link>
               <Spacer />
 
               <Link to="/MyProfilePage">profileページに移動</Link>

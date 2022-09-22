@@ -1,5 +1,7 @@
-// import React, { useRef, useState } from "react";
-// Import Swiper React components
+
+// 9月21日（水）
+// スライダーの作成、微調整が必要と思うが...
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link, } from "react-router-dom";
 
