@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Textarea } from '@chakra-ui/react'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 export function CollectFeedback(){
 
@@ -10,6 +10,10 @@ export function CollectFeedback(){
     console.log(state)
 
     let [value, setValue] = useState('')
+
+    useEffect(() => { 
+        if(state)setValue(state) 
+    },[]);
 
     let handleInputChange = (e) => {
         let inputValue = e.target.value
@@ -20,7 +24,7 @@ export function CollectFeedback(){
         <>
         <h1>フィードバック募集画面</h1>
         <Textarea
-            value={state}
+            value={value}
             onChange={handleInputChange}
             placeholder='例):私の長所を教えてください！'
             size='sm'

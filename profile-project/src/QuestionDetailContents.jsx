@@ -15,9 +15,7 @@ export function QuestionDetailContents(props){
 
     return(
         <>
-        <h1>{props.category}</h1>
         <button className="whatQuestion" onClick={WhatQuestion}>{props.question}</button>
-
         </>
     )
 }

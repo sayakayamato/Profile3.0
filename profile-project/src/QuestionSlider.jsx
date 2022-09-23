@@ -2,8 +2,10 @@
 // 9月21日（水）
 // スライダーの作成、微調整が必要と思うが...
 
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link, } from "react-router-dom";
+// import { Link, } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,6 +13,25 @@ import "swiper/css";
 import "./css/Slider.css";
 
 export function QuestionSlider() {
+
+  const navigate = useNavigate()
+
+    const WhatCategory = (e) => {    
+      console.log(e.target.innerText)
+      const clickCategory = e.target.innerText
+      navigate("/QuestionDetailPage", {state: clickCategory})
+    }
+
+    //テストデータ
+    const questioncategory = ["おすすめ質問", "就活", "恋愛", "遊び", "カテゴリ5", "カテゴリ6", "カテゴリ7"]
+
+    //9月22日(木)ベタガキをループにした
+    const categorylist = [];
+    for(let i = 0; i<questioncategory.length; i++){
+      categorylist.push(<SwiperSlide key={categorylist}><button onClick={WhatCategory}>{questioncategory[i]}</button></SwiperSlide>)
+    }
+
+
   return (
     <>
     
@@ -19,15 +40,9 @@ export function QuestionSlider() {
         spaceBetween={50}
         centeredSlides={true}
       >
-        <SwiperSlide className="q_category"><Link to="/QuestionDetailPage">おすすめ質問</Link></SwiperSlide>
-        <SwiperSlide>就活</SwiperSlide>
-        <SwiperSlide>恋愛</SwiperSlide>
-        <SwiperSlide>遊び</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+
+        {categorylist}
+        
       </Swiper>
     
     </>
