@@ -1,0 +1,14 @@
+.chats_question{
+    border: 1px solid;
+    margin: 5px;
+}
+
+.chats_answer{
+    border: 1px solid;
+    margin: 5px;
+    height: 600px; 
+}
+
+.chat_input{
+    margin: 5px;
+}

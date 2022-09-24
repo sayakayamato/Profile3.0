@@ -29,6 +29,7 @@ export function CollectFeedback(){
             placeholder='例):私の長所を教えてください！'
             size='sm'
         />
+        <button>送信</button>
         
         </>
     )
