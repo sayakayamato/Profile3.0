@@ -10,7 +10,6 @@ import { FeedContents } from "./FeedContents";
 
 
 
-
 export const RouterConfig = () => {
     return (
         <>

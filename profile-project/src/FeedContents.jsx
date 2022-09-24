@@ -49,7 +49,6 @@ export function FeedContents() {
 
     }
 
-
     return (
         <>
             {feedlist}
