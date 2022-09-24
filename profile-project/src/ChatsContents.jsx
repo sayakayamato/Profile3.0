@@ -7,7 +7,6 @@ export function ChatsContents(){
     const param = useParams();
     // console.log(param.feedID);
     
-    
 
     //テストデータ
     // const chat = [
