@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom"
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 export function FeedContents() {
@@ -21,15 +21,15 @@ export function FeedContents() {
 
 
     //クリックされた質問判定
-    // const WhatFeed = (e) => {
-    //     console.log(e);
-    //     //配列のキーとidが一致してるときにできる処理...
-    //     // const pushQuestionID = Object.keys(testFeedContents)
-    //     // console.log(pushQuestionID);
-    //     const whatfeedtext = e.target.innerText    //記入した質問本文を定数に入れる
-    //     navigate("/Chats", {state: whatfeedtext})             //ページ遷移と共に値を持っていく
+    const WhatFeed = (e) => {
+        console.log(e);
+        //配列のキーとidが一致してるときにできる処理...
+        const pushQuestionID = e.target.id
+        console.log(pushQuestionID);
+        const whatfeedtext = e.target.innerText    //記入した質問本文を定数に入れる
+        navigate(`/Chats/${pushQuestionID}`, {state: whatfeedtext})             //ページ遷移と共に値を持っていく
 
-    // }
+    }
 
     //navigate(`/Chats/${testFeedContents[i].id}`, {state: testFeedContents[i].text})
 
@@ -38,13 +38,14 @@ export function FeedContents() {
     for (let i = 0; i < testFeedContents.length; i++) {
         feedlist.push(
             <Box bg='white' w='100%' p={4} color='black' mb={5} key={feedlist} >
+                
                 <p>{testFeedContents[i].username}</p>
-                <Link to={`/Chats/${testFeedContents[i].id}`}><p>{testFeedContents[i].text}</p></Link>
+                <p onClick={WhatFeed} id={i}>{testFeedContents[i].text}</p>
+                
             </Box>
             
             
             )
-        console.log(testFeedContents[i].id)
 
     }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,} from "react";
 import { Link } from "react-router-dom";
 import { Input } from '@chakra-ui/react'
 import { useLocation } from 'react-router-dom';
@@ -18,17 +18,21 @@ import "./css/Chats.css"
 // ]
 
 
+
+
 export function Chats(){
 
     // console.log(useParams());
     // const param = useParams();
     // console.log(param.feedID);
 
-    //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
-    const questiontext = useLocation().state;
-    const chatID = useLocation().questionID;
+    //useLocationを使ってFeedContentsから値を受け取る
+    const location = useLocation();
+    const questiontext = location.state;
+    console.log(questiontext);
 
-    console.log(chatID);
+
+
 
     //inputに入力したチャットテキスト
     const [inputChatText, setinputChatText] = useState("")
