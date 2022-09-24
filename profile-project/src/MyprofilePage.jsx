@@ -34,7 +34,6 @@ export function MyProfilePage() {
                     </TabPanel>
 
                     <TabPanel>
-                        ここにフィードバックが入るよ
                         <FeedbackContents />
                     </TabPanel>
                 </TabPanels>

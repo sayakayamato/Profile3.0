@@ -3,8 +3,8 @@
     height: 830px;
     border: solid 1px;
     margin: 0 auto;
-    background: rgb(20,34,70);
-    background: linear-gradient(0deg, rgba(20,34,70,0.64) 0%, rgba(73,42,84,1) 100%);
+    background: rgb(49,83,172);
+    background: linear-gradient(0deg, rgba(49,83,172,0.64) 0%, rgba(73,42,84,1) 100%);
     color: white;
 }
 
@@ -49,4 +49,8 @@
 
 .friend_name{
     margin: 0 auto;
+}
+
+.collect_feedback{
+    color: black;
 }

@@ -1,5 +1,9 @@
-import React from 'react';
 import "./css/App.css";
+// Import Swiper React components
+import "swiper/css";
+import "swiper/css/navigation";
+import { QuestionSlider } from "./QuestionSlider";
+
 
 // import {MyProfileContents} from './TabContainer';
 
@@ -14,7 +18,10 @@ export function HomeContents() {
 
       <div className='q_category'>
         <p>質問カテゴリ</p>
-      </div>      
+      </div>
+
+      <QuestionSlider />
+  
     </>
 
   );
