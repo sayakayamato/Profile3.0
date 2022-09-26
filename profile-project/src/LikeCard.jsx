@@ -1,9 +1,9 @@
 import React from "react";
 
-export function ProfileCard(){
+export function LikeCard(){
     return(
         <>
-        
+        好きのページです
         </>
     )
 }
