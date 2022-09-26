@@ -8,28 +8,18 @@ import { ChatsContents } from "./ChatsContents";
 import "./css/Chats.css"
 
 
-//テストデータ
-// const ChatsData = [
-//     {id:1, chat:"これは長所チャットです"},
-//     {id:2, chat:"これは特徴チャットです"},
-//     {id:3, chat:"今日のプレゼンどうでした？"},
-//     {id:4, chat:"私って何色が似合うかなあ"},
-//     {id:5, chat:"私の直すべきところってどこかな..."}
-// ]
-
-
-
 
 export function Chats(){
 
-    // console.log(useParams());
-    // const param = useParams();
-    // console.log(param.feedID);
 
     //useLocationを使ってFeedContentsから値を受け取る
     const location = useLocation();
-    const questiontext = location.state;
+    console.log(location)
+    const questiontext = location.state.whatfeedtext;
     console.log(questiontext);
+    const feedID = location.state.pushQuestionID;
+    console.log(feedID)
+
 
 
 
@@ -37,8 +27,17 @@ export function Chats(){
     //inputに入力したチャットテキスト
     const [inputChatText, setinputChatText] = useState("")
 
-    //表示されているチャットテキスト
-    const [chatText, setchatText] = useState([]);
+    //テストテータ
+    const [chatText, setchatText] = useState(["明るい！", "風情がある！","ウケる！"]);
+    
+    //送るチャットユーザーID
+    const [userID, setuserID] = useState("");
+    console.log(userID);
+
+    //テストログインID
+    const loginID = "5";
+    
+    
 
 
     //inputのonChangeに設定する関数
@@ -51,6 +50,10 @@ export function Chats(){
         setchatText(newChatText);
         setinputChatText("");
     }
+    
+    
+
+    
 
 
     return(
@@ -60,13 +63,14 @@ export function Chats(){
 
         </div>
         <div className="chats_question">
-            {questiontext}
+            {/* {questiontext} */}
         </div>
         <ChatsContents />
         <div className="chats_answer">
             {chatText.map((text) => {
                 return(
-                    <div key={text}>
+                    
+                    <div key={text} className={userID === loginID ? "right" : "left" }>
                         <p>yamato sayaka</p>
                         <p>{text}</p>
                     </div>
@@ -74,6 +78,7 @@ export function Chats(){
             })}
         </div>
         <div>
+            <Input  id="userID" size='xs' value={userID} onChange={(event) => setuserID(event.target.value)}/>
             <Input placeholder='フィードバックを送信' value={inputChatText} onChange={onChangeChatText} size='xs'/>
             <button onClick={onClickSend}>送信</button>
         </div>
