@@ -4,11 +4,28 @@ import { FeedbackContents } from './FeedbackContents'
 import { KeywordsContents } from './KeywordsContents'
 import { ProfileTabContents } from './ProfiileTabContents'
 import { ProfileIcon } from './ProfileIcon'
+import { Flex, Spacer, Box} from '@chakra-ui/react'
+import { SettingsIcon, ChevronLeftIcon } from '@chakra-ui/icons'
 
 export function MyProfilePage() {
+    
+
     return (
         <>
-        <Link to="/">戻る</Link>
+            <div className='profilepage_top'>
+                
+                <Flex>
+                    <Box p='4' bg='' className='return_button'>
+                    <Link to="/"><ChevronLeftIcon boxSize={6}/></Link>
+                    </Box>
+                    <Spacer />
+                    <Box p='4' bg='' className='profile_setting'>
+                    <Link to="/SettingPage"><SettingsIcon boxSize={6}/></Link>
+                    </Box>
+                </Flex>
+
+            </div>
+
             <div className='profile_info'>
                 <div className='profile_icon'>
                     <ProfileIcon />
@@ -18,15 +35,17 @@ export function MyProfilePage() {
                 </div>
             </div>
             <Tabs>
-                <TabList>
-                    <Tab>profile</Tab>
-                    <Tab>keywords</Tab>
-                    <Tab>feedback</Tab>
+                <TabList className='profile_tablist'>
+                    <Tab className='tab'>profile</Tab>
+                    <Tab className='tab'>keywords</Tab>
+                    <Tab className='tab'>feedback</Tab>
                 </TabList>
 
                 <TabPanels>
                     <TabPanel>
                         <ProfileTabContents />
+                        
+
                     </TabPanel>
 
                     <TabPanel>
@@ -34,7 +53,6 @@ export function MyProfilePage() {
                     </TabPanel>
 
                     <TabPanel>
-                        ここにフィードバックが入るよ
                         <FeedbackContents />
                     </TabPanel>
                 </TabPanels>

@@ -1,16 +1,34 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 import { FeedContents } from './FeedContents'
 import { FriendsContents } from './FriendsContents'
-import {HomeContents} from './HomeContents'
+import { HomeContents } from './HomeContents'
 import { NewFriendModal } from './NewFriendModal'
+import { Flex, Spacer } from '@chakra-ui/react'
+import { Link, } from "react-router-dom";
+import { Avatar, Wrap, WrapItem } from '@chakra-ui/react'
 
 
 
 export function UnderTabBar() {
     return (
         <>
+            <div className='top_bar'>
+                <Flex>
+                    <Link to="/" className='service_name'>Profile3.0</Link>
+                    <Spacer />
+
+                    <Link to="/MyProfilePage">
+                        <Wrap className='top_profile_icon'>
+                            <WrapItem>
+                                <Avatar name='Dan Abrahmov' />
+                            </WrapItem>
+
+                        </Wrap>
+                    </Link>
+                </Flex>
+            </div>
             <Tabs variant='soft-rounded' colorScheme='whiteAlpha' isFitted='true' className='under_tab_bar'>
-            <TabPanels>
+                <TabPanels>
                     <TabPanel>
                         <HomeContents />
                     </TabPanel>
