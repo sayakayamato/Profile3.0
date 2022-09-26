@@ -35,10 +35,10 @@ export function MyProfilePage() {
                 </div>
             </div>
             <Tabs>
-                <TabList>
-                    <Tab>profile</Tab>
-                    <Tab>keywords</Tab>
-                    <Tab>feedback</Tab>
+                <TabList className='profile_tablist'>
+                    <Tab className='tab'>profile</Tab>
+                    <Tab className='tab'>keywords</Tab>
+                    <Tab className='tab'>feedback</Tab>
                 </TabList>
 
                 <TabPanels>

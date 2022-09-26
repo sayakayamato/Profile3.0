@@ -1,5 +1,5 @@
 import React from 'react';
-import { VStack, StackDivider, Box } from '@chakra-ui/react'
+import { VStack, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 
@@ -9,24 +9,30 @@ export function ProfileTabHome() {
     return (
         <>
             <VStack
-                divider={<StackDivider borderColor='gray.200' />}
-                spacing={4}
-                align='stretch'
+                // divider={<StackDivider borderColor='gray.200' />}
+                // spacing={4}
+                align='stretch' className='card_button_wrap'
             >
                 <Link to="/BasicCard">
-                    <Box h='40px' bg='yellow.200'>
-                        Basic
+                    <Box h={"80px"} bg='' className='profile_card_button' >
+                        <p className='card_button_p'>Basic</p>
                     </Box>
                 </Link>
-                <Box h='40px' bg='tomato'>
-                    Like
-                </Box>
-                <Box h='40px' bg='pink.100'>
-                    Values
-                </Box>
-                <Box h='40px' bg='green.100'>
-                    Activity
-                </Box>
+                <Link to="/LikeCard">
+                    <Box h={"80px"} bg='' className='profile_card_button'>
+                        <p className='card_button_p'>Like</p>
+                    </Box>
+                </Link>
+                <Link to="/ValueCard">
+                    <Box h={"80px"} bg='' className='profile_card_button'>
+                        <p className='card_button_p'>Values</p>
+                    </Box>
+                </Link>
+                <Link to="/ActtionCard">
+                    <Box h={"80px"} bg='' className='profile_card_button'>
+                        <p className='card_button_p'>Activity</p>
+                    </Box>
+                </Link>
             </VStack>
         </>
     )

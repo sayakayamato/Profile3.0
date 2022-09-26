@@ -8,7 +8,7 @@ export function ProfileIcon() {
         <>
         <Wrap>
             <WrapItem>
-                <Avatar name='Dan Abrahmov' />
+                <Avatar  size='xl' name='Dan Abrahmov' />
             </WrapItem>
             
         </Wrap>
