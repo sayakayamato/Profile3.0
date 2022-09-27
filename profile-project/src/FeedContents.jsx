@@ -27,18 +27,16 @@ export function FeedContents() {
         const pushQuestionID = e.target.id
         console.log(pushQuestionID);
         const whatfeedtext = e.target.innerText    //記入した質問本文を定数に入れる
-        navigate(`/Chats/${pushQuestionID}`, {state: whatfeedtext})             //ページ遷移と共に値を持っていく
+        navigate(`/Chats/${pushQuestionID}`, {state : {whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID}})             //ページ遷移と共に値を持っていく
 
     }
 
-    //navigate(`/Chats/${testFeedContents[i].id}`, {state: testFeedContents[i].text})
 
 
     const feedlist = [];
     for (let i = 0; i < testFeedContents.length; i++) {
         feedlist.push(
             <Box bg='white' w='100%' p={4} color='black' mb={5} key={feedlist} >
-                
                 <p>{testFeedContents[i].username}</p>
                 <p onClick={WhatFeed} id={i}>{testFeedContents[i].text}</p>
                 

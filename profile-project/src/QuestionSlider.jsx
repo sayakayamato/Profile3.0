@@ -2,15 +2,20 @@
 // 9月21日（水）
 // スライダーの作成、微調整が必要と思うが...
 
-
-import { Swiper, SwiperSlide } from "swiper/react";
-// import { Link, } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-
+import "swiper/css/pagination";
 import "./css/Slider.css";
+
+// import required modules
+import { Pagination } from "swiper";
+
+
 
 export function QuestionSlider() {
 
@@ -34,17 +39,20 @@ export function QuestionSlider() {
 
   return (
     <>
-    
-      <Swiper className="mySwiper"
-        slidesPerView={3}
-        spaceBetween={50}
-        centeredSlides={true}
-      >
 
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={20}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
         {categorylist}
-        
       </Swiper>
     
     </>
   );
 }
+
