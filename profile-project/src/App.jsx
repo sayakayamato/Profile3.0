@@ -15,7 +15,7 @@ function App() {
           <RouterConfig />
         </BrowserRouter>
       </ChakraProvider>
-      <TestFirebase/>
+      {/* <TestFirebase/> */}
     </div>
   );
 }
