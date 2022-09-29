@@ -1,39 +1,62 @@
-import React from 'react';
-import { Box } from '@chakra-ui/react'
+import { useNavigate } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
 
+import { useDataList } from "./hooks/useDataList";
 
 export function FeedbackContents() {
+  const logedInUserId = "-ND6W54zApUpQdX6I5bY";
+  const friendList = [logedInUserId];
 
-    //9/23
-    //テストデータ
-    const testFeedContents = [
-        {id:1, userID:5, username:"sayaka yamato", text:"私の長所ってなんですか？"},
-        {id:2, userID:5, username:"sayaka yamato", text:"私の特徴ってなんですかね？"},
-        {id:3, userID:10,username:"masato", text:"今日のプレゼンどうでした？"},
-        {id:4, userID:2, username:"natumi", text:"私って何色が似合うかなあ"},
-        {id:5, userID:5, username:"sayaka yamato", text:"私の直すべきところってどこかな..."}
-    ]
-    
+  // TODO: コンポーネント化
+  const dataList = useDataList;
+  const tableName = "questions";
+  const queryKey = "userId";
 
-    const myfeedlist = [];
-    for(let i = 0; i<testFeedContents.length; i++){
-        if(testFeedContents[i].userID === 5){
-            myfeedlist.push(
-                <Box bg='white' w='100%' p={4} color='black' mb={5} key={myfeedlist}>
-                    <p>{testFeedContents[i].username}</p>
-                    {testFeedContents[i].text}
-                </Box>
-            )
-        }
-        
-    }
+  const feedContents = friendList
+    .map((friendId) => {
+      const queryValue = friendId;
+      const { data } = dataList(tableName, queryKey, queryValue);
+      if (!data) {
+        return;
+      } else {
+        return data;
+      }
+      // return queryValue;
+    })
+    .filter((e) => typeof e !== "undefined");
+  //   console.log(feedContents);
 
+  const navigate = useNavigate();
+  const NewFeedContents = () => navigate("/CollectFeedback");
+  //クリックされた質問判定
+  const WhatFeed = (e) => {
+    console.log(e);
+    //配列のキーとidが一致してるときにできる処理...
+    const pushQuestionID = e.target.id;
+    console.log(pushQuestionID);
+    const whatfeedtext = e.target.innerText; //記入した質問本文を定数に入れる
+    navigate(`/Chats/${pushQuestionID}`, {
+      state: { whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID },
+    }); //ページ遷移と共に値を持っていく
+  };
 
-
-    return(
-        <>
-        {myfeedlist}
-    
+  return (
+    <>
+      {" "}
+      {feedContents.map((data) =>
+        Object.entries(data).map(([key, item]) => {
+          //   console.log(key, item.userId);
+          return (
+            <Box bg="white" w="100%" p={4} color="black" mb={5} key={key}>
+              <p>{item.username}</p>
+              <p onClick={WhatFeed} id={key}>
+                {item.content}
+              </p>
+            </Box>
+          );
+        })
+      )}
+      <button onClick={NewFeedContents}>+</button>
     </>
-    )
+  );
 }
