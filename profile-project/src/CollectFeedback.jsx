@@ -90,14 +90,17 @@ export function CollectFeedback() {
     };
     const feedId = dataCreate(tableName, struct);
     // TODO: ページ遷移処理
-    const feedUrl = "/Chats/" + feedId;
+    setFeedUrl("https://profile3-0-profile-project-onfm.vercel.app/Chats/" + String(feedId))
+    onOpen();
   };
+
+  const [ feedUrl, setFeedUrl ] = useState()
 
   //ボタンを押したら送信モーダル
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   //シェアボタン
-  const url = "https://profile3-0-profile-project-onfm.vercel.app/Chats/0";
+
 
   return (
     <>
@@ -131,10 +134,10 @@ export function CollectFeedback() {
           <ModalCloseButton />
           <ModalBody>
             <TwitterShareButton
-              url={url}
-              title="フィードバックください！"
-              via="Kill_In_Sun"
-              related={["Kill_In_Sun", "GatsbyJS"]}
+              url={feedUrl}
+              title={value}
+              // via="Kill_In_Sun"
+              // related={["Kill_In_Sun", "GatsbyJS"]}
               // hashtags={post.frontmatter.tags}
             >
               <TwitterIcon size={50} round />
