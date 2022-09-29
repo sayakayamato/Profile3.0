@@ -6,6 +6,10 @@ import { NewFriendModal } from './NewFriendModal'
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Link, } from "react-router-dom";
 import { Avatar, Wrap, WrapItem } from '@chakra-ui/react'
+import { MdHome } from "react-icons/md";
+import { MdOutlineArticle } from "react-icons/md";
+import { MdGroup } from "react-icons/md";
+
 
 
 
@@ -42,9 +46,9 @@ export function UnderTabBar() {
                     </TabPanel>
                 </TabPanels>
                 <TabList className='under_nav_bar'>
-                    <Tab color={"yellow.50"}>Home</Tab>
-                    <Tab color={"yellow.50"}>Feed</Tab>
-                    <Tab color={"yellow.50"}>Friend</Tab>
+                    <Tab color={"yellow.50"}><MdHome />Home</Tab>
+                    <Tab color={"yellow.50"}><MdOutlineArticle />Feed</Tab>
+                    <Tab color={"yellow.50"}><MdGroup />Friend</Tab>
                 </TabList>
             </Tabs>
         </>
