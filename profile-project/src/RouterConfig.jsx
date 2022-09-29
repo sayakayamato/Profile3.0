@@ -7,6 +7,10 @@ import { UnderTabBar } from "./UnderTabBar";
 import { FeedContents } from "./FeedContents";
 import { SettingPage } from "./SettingPage";
 import { BasicCard } from "./BasicCard";
+import { LikeCard } from "./LikeCard";
+import { ValueCard } from "./Valuecard";
+import { ActivityCard } from "./ActivityCard";
+
 // import { ChatsContents } from "./ChatsContents";
 
 
@@ -24,6 +28,9 @@ export const RouterConfig = () => {
                     <Route path="/Chats/:feedID" element={<Chats />} />
                     <Route path="/SettingPage" element={<SettingPage />} />
                     <Route path="/BasicCard" element={<BasicCard />} />
+                    <Route path="/LikeCard" element={<LikeCard />} />
+                    <Route path="/ValueCard" element={<ValueCard />} />
+                    <Route path="/ActivityCard" element={<ActivityCard />} />
                 </Routes>
         </>
     );

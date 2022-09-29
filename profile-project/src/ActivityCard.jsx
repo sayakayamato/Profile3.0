@@ -7,7 +7,7 @@ import { Flex, Spacer, Box } from "@chakra-ui/react";
 import { SettingsIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import { ProfileCardContents } from "./ProfileCardContents";
 
-export function ValueCard() {
+export function ActivityCard() {
   return (
     <>
       <div className="profilepage_top">
