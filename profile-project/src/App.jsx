@@ -1,36 +1,24 @@
-import React from 'react';
-import { BrowserRouter, Link, } from "react-router-dom";
-import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 import "./css/App.css";
-import { Flex, Spacer } from '@chakra-ui/react'
+import "./css/Home.css";
 // import { UnderTabBar } from './UnderTabBar';
-import { RouterConfig } from './RoutingConfig';
-
-
+import { RouterConfig } from "./RouterConfig";
+// For test
+import { TestFirebase } from "./test/TestFirebase";
 
 function App() {
   return (
-    <ChakraProvider>
-      <BrowserRouter>
-        {/* {常に表示する部分} */}
-        <div className='phone_size'>
-          <div className='top_bar'>
-            <Flex>
-              Profile3.0
-              <Spacer />
-
-              <Link to="/MyProfilePage">profileページに移動</Link>
-            </Flex>
-          </div>
-
+    <div className="phone_size">
+      <ChakraProvider>
+        <BrowserRouter>
           <RouterConfig />
-          
-        </div>
-
-
-      </BrowserRouter>
-    </ChakraProvider>
+        </BrowserRouter>
+      </ChakraProvider>
+      {/* <TestFirebase/> */}
+    </div>
   );
 }
+// {さとるだよ}
 
 export default App;

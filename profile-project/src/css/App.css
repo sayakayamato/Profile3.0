@@ -1,25 +1,29 @@
 .phone_size{
-    width: 390px;
-    height: 830px;
+    width: 100%;
+    height: 100vh;
     border: solid 1px;
     margin: 0 auto;
-    background: rgb(20,34,70);
-    background: linear-gradient(0deg, rgba(20,34,70,0.64) 0%, rgba(73,42,84,1) 100%);
+    background: rgb(49,83,172);
+    background: linear-gradient(0deg, rgba(49,83,172,0.64) 0%, rgba(73,42,84,1) 100%);
+    /* background: rgb(49,62,133);
+    background: radial-gradient(circle, rgba(49,62,133,1) 0%, rgba(9,7,29,1) 100%); */
+    /* background: rgb(49,62,133);
+    background: radial-gradient(circle, rgba(49,62,133,1) 0%, rgba(41,18,73,1) 100%); */
+    /* background: rgb(90,107,199);
+background: radial-gradient(circle, rgba(90,107,199,1) 0%, rgba(43,13,84,1) 100%); */
+/* background: rgb(86,103,195);
+background: radial-gradient(circle, rgba(86,103,195,1) 0%, rgba(88,28,171,1) 100%); */
+
     color: white;
+    border: 1px solid;
+    font-family: 'TsukuARdGothic-Regular',sans-serif;
 }
 
 
 .under_nav_bar{
     position: absolute;
     bottom: 0;
-}
-
-.home_greed{
-    margin-top: 100px;
-}
-
-.q_category{
-    margin-top: 50px;
+    width: 100%;
 }
 
 
@@ -49,4 +53,17 @@
 
 .friend_name{
     margin: 0 auto;
+}
+
+.collect_feedback{
+    color: black;
+}
+
+
+.feed_userID{
+    visibility:hidden
+}
+
+.collect_feedback_button{
+    border: 1px solid white;
 }
