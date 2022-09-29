@@ -1,0 +1,108 @@
+{
+  "chats": {
+    "-ND6eOgor7atsoRb073r": {
+      "content": "どうかな〜",
+      "createdAt": "2022-09-29T05:13:03.103Z",
+      "feedId": "-ND6Z7U_-ZijSzPqsaOU",
+      "resUserId": "-ND6W54zApUpQdX6I5bY",
+      "resUsername": "Yamato Sayaka"
+    },
+    "-ND6gUhXgarkK9PLlVUa": {
+      "content": "どうでしょう",
+      "createdAt": "2022-09-29T05:22:12.013Z",
+      "feedId": "-ND6Z7U_-ZijSzPqsaOU",
+      "resUserId": "-ND6W54zApUpQdX6I5bY",
+      "resUsername": "Yamato Sayaka"
+    },
+    "-ND6gZDEH9ErKZC15evx": {
+      "content": "イケイケ〜",
+      "createdAt": "2022-09-29T05:22:30.489Z",
+      "feedId": "-ND6Z7U_-ZijSzPqsaOU",
+      "resUserId": "-ND6WFQd0XdMDvvjHGU0",
+      "resUsername": "Masato"
+    }
+  },
+  "questionCategory": {
+    "-ND6kWHwg-PWK8lXxXUk": {
+      "content": "おすすめ質問",
+      "createdAt": "2022-09-29T05:39:47.081Z"
+    },
+    "-ND6kYYwekWn66fY90LB": {
+      "content": "就活",
+      "createdAt": "2022-09-29T05:39:56.362Z"
+    },
+    "-ND6k_2UE0MS45etiEM9": {
+      "content": "恋愛",
+      "createdAt": "2022-09-29T05:40:02.478Z"
+    },
+    "-ND6kadngpM5IA_8SrYE": {
+      "content": "遊び",
+      "createdAt": "2022-09-29T05:40:09.026Z"
+    },
+    "-ND6kcuuCZBYRqWLwYnD": {
+      "content": "カテゴリ5",
+      "createdAt": "2022-09-29T05:40:18.312Z"
+    },
+    "-ND6kfioB7P85LcRNDPK": {
+      "content": "カテゴリ6",
+      "createdAt": "2022-09-29T05:40:29.827Z"
+    }
+  },
+  "questionSamples": {
+    "-ND6lOW5kxnOrRwtpiGW": {
+      "categoryId": "-ND6kWHwg-PWK8lXxXUk",
+      "content": "私の長所は？",
+      "createdAt": "2022-09-29T05:43:37.365Z"
+    },
+    "-ND6lR7UlQDlJEX6iI0b": {
+      "categoryId": "-ND6kWHwg-PWK8lXxXUk",
+      "content": "私の短所は？",
+      "createdAt": "2022-09-29T05:43:48.078Z"
+    },
+    "-ND6lbfr5s0fvVolfAL7": {
+      "categoryId": "-ND6kYYwekWn66fY90LB",
+      "content": "仕事と生活どっち？",
+      "createdAt": "2022-09-29T05:44:35.398Z"
+    },
+    "-ND6lhjaw71cmBfmRZs4": {
+      "categoryId": "-ND6kYYwekWn66fY90LB",
+      "content": "大企業っぽい？ベンチャーぽい？",
+      "createdAt": "2022-09-29T05:45:00.212Z"
+    }
+  },
+  "questions": {
+    "-ND6Z7U_-ZijSzPqsaOU": {
+      "content": "私ってテンション高いですか？",
+      "createdAt": "2022-09-29T04:45:39.761Z",
+      "userId": "-ND6W54zApUpQdX6I5bY",
+      "username": "Yamato Sayaka"
+    }
+  },
+  "users": {
+    "-ND6W54zApUpQdX6I5bY": {
+      "createdAt": "2022-09-29T04:32:23.492Z",
+      "imageUrl": "",
+      "username": "Yamato Sayaka"
+    },
+    "-ND6WFQd0XdMDvvjHGU0": {
+      "createdAt": "2022-09-29T04:33:05.840Z",
+      "imageUrl": "",
+      "username": "Masato"
+    },
+    "-ND6WIAu0qiVaZ4QWWWC": {
+      "createdAt": "2022-09-29T04:33:17.122Z",
+      "imageUrl": "",
+      "username": "Natsumi"
+    },
+    "-ND6WKYlum6_OndQhmrC": {
+      "createdAt": "2022-09-29T04:33:26.841Z",
+      "imageUrl": "",
+      "username": "Yuka"
+    },
+    "-ND6WN-E2W7EctUGB2te": {
+      "createdAt": "2022-09-29T04:33:36.855Z",
+      "imageUrl": "",
+      "username": "Tadashi"
+    }
+  }
+}

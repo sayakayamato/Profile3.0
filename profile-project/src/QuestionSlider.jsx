@@ -1,8 +1,7 @@
-
 // 9月21日（水）
 // スライダーの作成、微調整が必要と思うが...
 
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,31 +14,44 @@ import "./css/Slider.css";
 // import required modules
 import { Pagination } from "swiper";
 
-
+import { useFirebase } from "./hooks/useFirebase";
 
 export function QuestionSlider() {
+  const navigate = useNavigate();
+  const WhatCategory = (e) => {
+    console.log(e.target.innerText);
+    const categoryName = e.target.innerText;
+    const categoryId = e.target.id;
+    navigate("/QuestionDetailPage", {
+      state: { categoryName: categoryName, categoryId: categoryId },
+    });
+  };
 
-  const navigate = useNavigate()
+  // [Added]22/09/27: Realtime Databaseを導入
 
-    const WhatCategory = (e) => {    
-      console.log(e.target.innerText)
-      const clickCategory = e.target.innerText
-      navigate("/QuestionDetailPage", {state: clickCategory})
-    }
+  // const questioncategory = [
+  //   "おすすめ質問",
+  //   "就活",
+  //   "恋愛",
+  //   "遊び",
+  //   "カテゴリ5",
+  //   "カテゴリ6",
+  //   "カテゴリ7",
+  // ];
+  const { data } = useFirebase("questionCategory");
 
-    //テストデータ
-    const questioncategory = ["おすすめ質問", "就活", "恋愛", "遊び", "カテゴリ5", "カテゴリ6", "カテゴリ7"]
-
-    //9月22日(木)ベタガキをループにした
-    const categorylist = [];
-    for(let i = 0; i<questioncategory.length; i++){
-      categorylist.push(<SwiperSlide key={categorylist}><button onClick={WhatCategory}>{questioncategory[i]}</button></SwiperSlide>)
-    }
-
+  //9月22日(木)ベタガキをループにした
+  // const categorylist = [];
+  // for (let i = 0; i < questioncategory.length; i++) {
+  //   categorylist.push(
+  //     <SwiperSlide key={categorylist}>
+  //       <button onClick={WhatCategory}>{questioncategory[i]}</button>
+  //     </SwiperSlide>
+  //   );
+  // }
 
   return (
     <>
-
       <Swiper
         slidesPerView={3}
         spaceBetween={20}
@@ -49,10 +61,15 @@ export function QuestionSlider() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {categorylist}
+        {Object.entries(data).map(([key, item]) => (
+          <SwiperSlide key={key}>
+            {console.log(key)}
+            <button onClick={WhatCategory} id={key}>
+              {String(item.content)}
+            </button>
+          </SwiperSlide>
+        ))}
       </Swiper>
-    
     </>
   );
 }
-
