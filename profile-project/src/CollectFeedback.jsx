@@ -23,7 +23,7 @@ import {
 export function CollectFeedback() {
   //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
   const state = useLocation().state;
-  console.log(state);
+  // console.log(state);
 
   let [value, setValue] = useState("");
 
@@ -36,7 +36,7 @@ export function CollectFeedback() {
     setValue(inputValue);
   };
 
-// TODO:
+  // TODO:
   //テストログインID⇨テストでは切り替えてください
   const logedInUserId = "-ND6W54zApUpQdX6I5bY";
   const logedInUsername = "Yamato Sayaka";
@@ -80,6 +80,8 @@ export function CollectFeedback() {
 
   const dataCreate = useDataCreate;
 
+  const [feedId, setFeedId] = useState();
+
   const registerNewQuestion = () => {
     const tableName = "questions";
     const struct = {
@@ -88,19 +90,25 @@ export function CollectFeedback() {
       content: value,
       createdAt: new Date().toISOString(),
     };
-    const feedId = dataCreate(tableName, struct);
+    const createdPromise = dataCreate(tableName, struct);
     // TODO: ページ遷移処理
-    setFeedUrl("https://profile3-0-profile-project-onfm.vercel.app/Chats/" + String(feedId))
+    createdPromise.then((value) => {
+      setFeedId(value);
+    });
+    console.log(feedId);
+    setFeedUrl(
+      "https://profile3-0-profile-project-onfm.vercel.app/Chats/" +
+        String(feedId)
+    );
     onOpen();
   };
 
-  const [ feedUrl, setFeedUrl ] = useState()
+  const [feedUrl, setFeedUrl] = useState();
 
   //ボタンを押したら送信モーダル
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   //シェアボタン
-
 
   return (
     <>
