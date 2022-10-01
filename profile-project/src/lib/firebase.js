@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import {
+  getAuth,
+  TwitterAuthProvider,
+  GoogleAuthProvider,
+} from "firebase/auth";
 // import { getAnalytics } from "firebase/analytics";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -14,10 +19,13 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const firebaseApp = initializeApp(firebaseConfig);
+
 // const analytics = getAnalytics(app);
-export const db = getDatabase(app);
+export const providerGoogle = new GoogleAuthProvider();
+export const providerTwitter = new TwitterAuthProvider();
+export const db = getDatabase(firebaseApp);
+export const auth = getAuth();
 
 // const useDatabase = () => {
 //   return useMemo(() => firebase.database().ref(), []);
