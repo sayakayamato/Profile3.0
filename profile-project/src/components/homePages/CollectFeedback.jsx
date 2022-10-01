@@ -4,7 +4,7 @@ import { Textarea, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
-import { useDataCreate } from "./hooks/useDataCreate";
+import { useDataCreate } from "../../hooks/useDataCreate";
 import { Text } from "@chakra-ui/react";
 
 // import { useNavigate } from "react-router-dom"
@@ -100,7 +100,7 @@ export function CollectFeedback() {
     });
     console.log(feedId);
     setFeedUrl(
-      "https://profile3-0-profile-project-onfm.vercel.app/Chats/" +
+      "https://profile3-0-profile-project-onfm.vercel.app/chats/" +
         String(feedId)
     );
     onOpen();

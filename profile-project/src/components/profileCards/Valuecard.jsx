@@ -1,19 +1,19 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { FeedbackContents } from "./FeedbackContents";
-import { KeywordsContents } from "./KeywordsContents";
-import { ProfileTabContents } from "./ProfiileTabContents";
-import { ProfileIcon } from "./ProfileIcon";
+import { FeedbackContents } from "../homePages/FeedbackContents";
+import { KeywordsContents } from "../myPages/KeywordsContents";
+import { ProfileIcon } from "../myPages/ProfileIcon";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import { SettingsIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import { ProfileCardContents } from "../myPages/ProfileCardContents";
 
-export function MyProfilePage() {
+export function ValueCard() {
   return (
     <>
       <div className="profilepage_top">
         <Flex>
           <Box p="4" bg="" className="return_button">
-            <Link to="/">
+            <Link to="/MyProfilePage">
               <ChevronLeftIcon boxSize={6} />
             </Link>
           </Box>
@@ -39,9 +39,9 @@ export function MyProfilePage() {
           <Tab className="tab">feedback</Tab>
         </TabList>
 
-        <TabPanels className="profile_contents_space">
+        <TabPanels>
           <TabPanel>
-            <ProfileTabContents />
+            <ProfileCardContents />
           </TabPanel>
 
           <TabPanel>

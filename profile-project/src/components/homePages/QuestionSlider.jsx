@@ -9,12 +9,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "./css/Slider.css";
+import "../../css/Slider.css";
 
 // import required modules
 import { Pagination } from "swiper";
 
-import { useFirebase } from "./hooks/useFirebase";
+import { useFirebase } from "../../hooks/useFirebase";
 
 export function QuestionSlider() {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export function QuestionSlider() {
     console.log(e.target.innerText);
     const categoryName = e.target.innerText;
     const categoryId = e.target.id;
-    navigate("/QuestionDetailPage", {
+    navigate("/questionsamples", {
       state: { categoryName: categoryName, categoryId: categoryId },
     });
   };
@@ -63,7 +63,6 @@ export function QuestionSlider() {
       >
         {Object.entries(data).map(([key, item]) => (
           <SwiperSlide key={key}>
-            {console.log(key)}
             <button onClick={WhatCategory} id={key}>
               {String(item.content)}
             </button>

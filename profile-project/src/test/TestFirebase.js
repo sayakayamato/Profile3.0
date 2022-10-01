@@ -1,9 +1,13 @@
 import { useState, useNavigate } from "react";
+import FirebaseLogin from "../components/FirebaseLogin";
 // import { useFirebase } from "../hooks/useFirebase";
 import { useDataList } from "../hooks/useDataList";
+import { auth } from "../lib/firebase";
 import { CreateCategory } from "./CreateCategory";
 import { CreateQuestionSample } from "./CreateQuestionSample";
 import { CreateUser } from "./CreateUser";
+
+import { onAuthStateChanged } from "firebase/auth";
 
 // import { useDataCreate } from "../hooks/useDataCreate";
 // import { useDataRead } from "../hooks/useDataRead";
@@ -55,12 +59,20 @@ export const TestFirebase = () => {
   // console.log(data);
   // const addNewItem = () => {};
 
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      console.log(uid);
+    } else {
+      console.log("ログインしてください");
+    }
+  });
+
   return (
     <>
       <div style={{ backgroundColor: "white", color: "black" }}>
         <p>TestFirebase</p>
-        {/* <CategoryList /> */}
-        <input
+        {/* <input
           style={{ backgroundColor: "gray" }}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="input your name"
@@ -76,13 +88,15 @@ export const TestFirebase = () => {
           }}
         >
           ボタン
-        </button>
+        </button> */}
+        <></>
       </div>
-      <CreateUser />
+      <FirebaseLogin />
+      {/* <CreateUser />
       <br />
       <CreateCategory />
       <br />
-      <CreateQuestionSample/>
+      <CreateQuestionSample/> */}
     </>
   );
 };

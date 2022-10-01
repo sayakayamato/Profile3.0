@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useDataList } from "./hooks/useDataList";
+import { useDataList } from "../../hooks/useDataList";
 
 
 // import { Link } from 'react-router-dom'
@@ -70,7 +70,7 @@ export function FeedContents() {
     const pushQuestionID = e.target.id;
     console.log(pushQuestionID);
     const whatfeedtext = e.target.innerText; //記入した質問本文を定数に入れる
-    navigate(`/Chats/${pushQuestionID}`, {
+    navigate(`/chats/${pushQuestionID}`, {
       state: { whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID },
     }); //ページ遷移と共に値を持っていく
   };

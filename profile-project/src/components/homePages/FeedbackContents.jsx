@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 
-import { useDataList } from "./hooks/useDataList";
+import { useDataList } from "../../hooks/useDataList";
 
 export function FeedbackContents() {
   const logedInUserId = "-ND6W54zApUpQdX6I5bY";

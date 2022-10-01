@@ -1,13 +1,13 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { FeedbackContents } from "./FeedbackContents";
-import { KeywordsContents } from "./KeywordsContents";
-import { ProfileIcon } from "./ProfileIcon";
+import { FeedbackContents } from "../homePages/FeedbackContents";
+import { KeywordsContents } from "../myPages/KeywordsContents";
+import { ProfileIcon } from "../myPages/ProfileIcon";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import { SettingsIcon, ChevronLeftIcon } from "@chakra-ui/icons";
-import { ProfileCardContents } from "./ProfileCardContents";
+import { ProfileCardContents } from "../myPages/ProfileCardContents";
 
-export function BasicCard() {
+export function ActivityCard() {
   return (
     <>
       <div className="profilepage_top">

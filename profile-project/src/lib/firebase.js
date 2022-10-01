@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+// import * as firebaseui from "firebaseui";
+import "firebaseui/dist/firebaseui.css";
 import {
   getAuth,
   TwitterAuthProvider,
@@ -19,6 +21,20 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID,
 };
 
+export const uiConfig = {
+  // Popup signin flow rather than redirect flow.
+  signInFlow: "popup",
+  // We will display Google and Facebook as auth providers.
+  signInOptions: [
+    GoogleAuthProvider.PROVIDER_ID,
+    TwitterAuthProvider.PROVIDER_ID,
+  ],
+  callbacks: {
+    // Avoid redirects after sign-in.
+    signInSuccessWithAuthResult: () => false,
+  },
+};
+
 const firebaseApp = initializeApp(firebaseConfig);
 
 // const analytics = getAnalytics(app);
@@ -26,6 +42,7 @@ export const providerGoogle = new GoogleAuthProvider();
 export const providerTwitter = new TwitterAuthProvider();
 export const db = getDatabase(firebaseApp);
 export const auth = getAuth();
+// export const ui = new firebaseui.auth.AuthUI(getAuth());
 
 // const useDatabase = () => {
 //   return useMemo(() => firebase.database().ref(), []);

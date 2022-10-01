@@ -1,6 +1,6 @@
 import React from 'react';
 import { Avatar, Wrap, WrapItem} from '@chakra-ui/react'
-import "./css/ProfileInfo.css";
+import "../../css/ProfileInfo.css";
 
 
 export function ProfileIcon() {

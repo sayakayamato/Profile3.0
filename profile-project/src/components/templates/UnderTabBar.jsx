@@ -1,8 +1,8 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
-import { FeedContents } from './FeedContents'
-import { FriendsContents } from './FriendsContents'
-import { HomeContents } from './HomeContents'
-import { NewFriendModal } from './NewFriendModal'
+import { FeedContents } from '../feedPages/FeedContents'
+import { FriendsContents } from '../friendPages/FriendsContents'
+import { HomeContents } from '../homePages/HomeContents'
+import { NewFriendModal } from '../friendPages/NewFriendModal'
 import { Flex, Spacer } from '@chakra-ui/react'
 import { Link, } from "react-router-dom";
 import { Avatar, Wrap, WrapItem } from '@chakra-ui/react'

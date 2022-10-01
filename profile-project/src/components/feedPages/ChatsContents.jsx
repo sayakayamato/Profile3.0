@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { Input } from "@chakra-ui/react";
 // import { useLocation } from 'react-router-dom';
 
-import { useDataList } from "./hooks/useDataList";
-import { useDataCreate } from "./hooks/useDataCreate";
+import { useDataList } from "../../hooks/useDataList";
+import { useDataCreate } from "../../hooks/useDataCreate";
 
-import "./css/Chats.css";
-import { useDataRead } from "./hooks/useDataRead";
+import "../../css/Chats.css";
+import { useDataRead } from "../../hooks/useDataRead";
 
 export function ChatsContent({ feedId }) {
   //useLocationを使ってFeedContentsから値を受け取る

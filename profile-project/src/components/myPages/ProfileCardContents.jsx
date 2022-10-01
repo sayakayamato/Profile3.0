@@ -2,7 +2,7 @@ import React from "react";
 // import { Wrap, WrapItem, Center } from "@chakra-ui/react";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 
-import "./css/Proflie_Card.css";
+import "../../css/Proflie_Card.css";
 
 export function ProfileCardContents() {
   return (

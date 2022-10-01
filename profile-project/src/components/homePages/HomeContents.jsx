@@ -1,5 +1,5 @@
-import "./css/Home.css"
-import "./css/App.css"
+import "../../css/Home.css"
+import "../../css/App.css"
 import "swiper/css/navigation";
 import { QuestionSlider } from "./QuestionSlider";
 

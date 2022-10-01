@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 // import { useParams } from "react-router-dom";
 
-import "./css/Chats.css";
+import "../../css/Chats.css";
 
 export function Chats() {
   //useLocationを使ってFeedContentsから値を受け取る

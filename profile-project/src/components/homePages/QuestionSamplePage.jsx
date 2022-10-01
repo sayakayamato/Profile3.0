@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { QuestionDetailContents } from "./QuestionDetailContents";
+import { QuestionSampleContents } from "./QuestionSampleContents";
 import { useLocation } from "react-router-dom";
 
-import { useDataList } from "./hooks/useDataList";
+import { useDataList } from "../../hooks/useDataList";
 
-export const QuestionDetailPage = () => {
+export const QuestionSamplePage = () => {
   //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
   const categoryName = useLocation().state.categoryName;
   const categoryId = useLocation().state.categoryId;
@@ -26,7 +26,7 @@ export const QuestionDetailPage = () => {
         <ul>
           {Object.entries(data).map(([key, item]) => (
             <li className="detail_question" key={key}>
-              <QuestionDetailContents question={String(item.content)} />
+              <QuestionSampleContents question={String(item.content)} />
             </li>
           ))}
         </ul>
