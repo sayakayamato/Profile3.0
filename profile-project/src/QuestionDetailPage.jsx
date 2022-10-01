@@ -19,13 +19,13 @@ export const QuestionDetailPage = () => {
   return (
     <>
       <Link to="/">
-        <p>戻る</p>
+        <p className="return_button">戻る</p>
       </Link>
-      <p>{categoryName}</p>
+      <p className="caterory_name">{categoryName}</p>
       <div>
         <ul>
           {Object.entries(data).map(([key, item]) => (
-            <li key={key}>
+            <li className="detail_question" key={key}>
               <QuestionDetailContents question={String(item.content)} />
             </li>
           ))}

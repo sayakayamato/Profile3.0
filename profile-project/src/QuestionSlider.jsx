@@ -54,7 +54,7 @@ export function QuestionSlider() {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={20}
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
