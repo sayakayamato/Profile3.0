@@ -2,6 +2,7 @@
   "name": "profile-project",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://profile3-0-profile-project-onfm.vercel.app/",
   "dependencies": {
     "@chakra-ui/system": "^2.2.11",
     "@react-navigation/bottom-tabs": "^6.3.3",
