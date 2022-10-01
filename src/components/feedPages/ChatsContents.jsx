@@ -6,7 +6,7 @@ import { useDataList } from "../../hooks/useDataList";
 import { useDataCreate } from "../../hooks/useDataCreate";
 
 import "../../css/Chats.css";
-import { useDataRead } from "../../hooks/useDataRead";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export function ChatsContent({ feedId }) {
   //useLocationを使ってFeedContentsから値を受け取る
@@ -38,8 +38,11 @@ export function ChatsContent({ feedId }) {
 
   // TODO:
   //テストログインID⇨テストでは切り替えてください
-  const logedInUserId = "-ND6W54zApUpQdX6I5bY";
-  const logedInUsername = "Yamato Sayaka";
+  const { user } = useAuthContext();
+  // TODO: 外部流入の場合、ログインユーザーでないので、
+  // ユーザー名をどうするか、
+  const logedInUserId = user.uid;
+  const logedInUsername = user.displayName;
   // const logedInUserId = "-ND6WFQd0XdMDvvjHGU0";
   // const logedInUsername = "Masato";
 
@@ -48,35 +51,6 @@ export function ChatsContent({ feedId }) {
   //   const logedInUsername = logedInUser.username;
   //   console.log("logedInUsername");
   //   console.log(logedInUsername);
-
-  //   ユーザー一覧
-  //   "users": {
-  //     "-ND6W54zApUpQdX6I5bY": {
-  //       "createdAt": "2022-09-29T04:32:23.492Z",
-  //       "imageUrl": "",
-  //       "username": "Yamato Sayaka"
-  //     },
-  //     "-ND6WFQd0XdMDvvjHGU0": {
-  //       "createdAt": "2022-09-29T04:33:05.840Z",
-  //       "imageUrl": "",
-  //       "username": "Masato"
-  //     },
-  //     "-ND6WIAu0qiVaZ4QWWWC": {
-  //       "createdAt": "2022-09-29T04:33:17.122Z",
-  //       "imageUrl": "",
-  //       "username": "Natsumi"
-  //     },
-  //     "-ND6WKYlum6_OndQhmrC": {
-  //       "createdAt": "2022-09-29T04:33:26.841Z",
-  //       "imageUrl": "",
-  //       "username": "Yuka"
-  //     },
-  //     "-ND6WN-E2W7EctUGB2te": {
-  //       "createdAt": "2022-09-29T04:33:36.855Z",
-  //       "imageUrl": "",
-  //       "username": "Tadashi"
-  //     }
-  //   }
 
   //   //inputのonChangeに設定する関数
   //   const onChangeChatText = (e) => setInputChatText(e.target.value);

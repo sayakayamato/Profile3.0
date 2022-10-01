@@ -1,6 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-import { FeedbackContents } from "../homePages/FeedbackContents";
+import { FeedbackContents } from "./FeedbackContents";
 import { KeywordsContents } from "./KeywordsContents";
 import { ProfileTabContents } from "./ProfiileTabContents";
 import { ProfileIcon } from "./ProfileIcon";

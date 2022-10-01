@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDataList } from "../../hooks/useDataList";
-
+import { useAuthContext } from "../../contexts/AuthContext";
 
 // import { Link } from 'react-router-dom'
 
@@ -11,12 +11,15 @@ export function FeedContents() {
   const navigate = useNavigate();
   const NewFeedContents = () => navigate("/CollectFeedback");
 
-  const logedInUserId = "-ND6W54zApUpQdX6I5bY";
+  const { user } = useAuthContext();
+  const logedInUserId = user.uid;
+  // const logedInUsername = user.displayName;
+
   // const [friendList, setFriendList] = useState([])
   //
-  //
   // setFriendList([1, 2, 3, 4, 5, 6])
-  const friendList = [1, 2, 3, 4, 5, 6, 10, logedInUserId];
+  // TODO: フレンドリストを追加する必要あり
+  const friendList = [logedInUserId];
 
   //テストデータ
   //   const testFeedContents = [
@@ -89,12 +92,19 @@ export function FeedContents() {
 
   return (
     <>
-      
       {feedContents.map((data) =>
         Object.entries(data).map(([key, item]) => {
           //   console.log(key, item.userId);
           return (
-            <Box className="feed_box" bg={"rgba(255, 255, 255, 0.7)"} w="100%" p={4} color="black" mb={5} key={key}>
+            <Box
+              className="feed_box"
+              bg={"rgba(255, 255, 255, 0.7)"}
+              w="100%"
+              p={4}
+              color="black"
+              mb={5}
+              key={key}
+            >
               <p className="feed_user_name">{item.username}</p>
               <p className="feed_contents_text" onClick={WhatFeed} id={key}>
                 {item.content}
@@ -103,7 +113,9 @@ export function FeedContents() {
           );
         })
       )}
-      <button onClick={NewFeedContents} className="feed_add_button">+</button>
+      <button onClick={NewFeedContents} className="feed_add_button">
+        +
+      </button>
     </>
   );
 }

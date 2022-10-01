@@ -2,9 +2,13 @@ import { useNavigate } from "react-router-dom";
 import { Box } from "@chakra-ui/react";
 
 import { useDataList } from "../../hooks/useDataList";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export function FeedbackContents() {
-  const logedInUserId = "-ND6W54zApUpQdX6I5bY";
+  const { user } = useAuthContext();
+  const logedInUserId = user.uid;
+  // const logedInUsername = user.displayName;
+
   const friendList = [logedInUserId];
 
   // TODO: コンポーネント化

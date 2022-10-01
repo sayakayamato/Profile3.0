@@ -22,6 +22,7 @@ import {
   Button,
   useDisclosure,
 } from "@chakra-ui/react";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export function CollectFeedback() {
   //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
@@ -39,47 +40,11 @@ export function CollectFeedback() {
     setValue(inputValue);
   };
 
+  const { user } = useAuthContext();
   // TODO:
   //テストログインID⇨テストでは切り替えてください
-  const logedInUserId = "-ND6W54zApUpQdX6I5bY";
-  const logedInUsername = "Yamato Sayaka";
-  // const logedInUserId = "-ND6WFQd0XdMDvvjHGU0";
-  // const logedInUsername = "Masato";
-
-  //   const dataRead = useDataRead;
-  //   const logedInUser = dataRead("users", logedInUserId);
-  //   const logedInUsername = logedInUser.username;
-  //   console.log("logedInUsername");
-  //   console.log(logedInUsername);
-
-  //   ユーザー一覧
-  //   "users": {
-  //     "-ND6W54zApUpQdX6I5bY": {
-  //       "createdAt": "2022-09-29T04:32:23.492Z",
-  //       "imageUrl": "",
-  //       "username": "Yamato Sayaka"
-  //     },
-  //     "-ND6WFQd0XdMDvvjHGU0": {
-  //       "createdAt": "2022-09-29T04:33:05.840Z",
-  //       "imageUrl": "",
-  //       "username": "Masato"
-  //     },
-  //     "-ND6WIAu0qiVaZ4QWWWC": {
-  //       "createdAt": "2022-09-29T04:33:17.122Z",
-  //       "imageUrl": "",
-  //       "username": "Natsumi"
-  //     },
-  //     "-ND6WKYlum6_OndQhmrC": {
-  //       "createdAt": "2022-09-29T04:33:26.841Z",
-  //       "imageUrl": "",
-  //       "username": "Yuka"
-  //     },
-  //     "-ND6WN-E2W7EctUGB2te": {
-  //       "createdAt": "2022-09-29T04:33:36.855Z",
-  //       "imageUrl": "",
-  //       "username": "Tadashi"
-  //     }
-  //   }
+  const logedInUserId = user.uid;
+  const logedInUsername = user.displayName;
 
   const dataCreate = useDataCreate;
 
