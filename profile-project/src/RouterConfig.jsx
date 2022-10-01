@@ -31,6 +31,7 @@ export const RouterConfig = () => {
                     <Route path="/LikeCard" element={<LikeCard />} />
                     <Route path="/ValueCard" element={<ValueCard />} />
                     <Route path="/ActivityCard" element={<ActivityCard />} />
+                    {/* <Route path="/FeedContents" element={<FeedContents />} /> */}
                 </Routes>
         </>
     );

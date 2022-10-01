@@ -40,8 +40,8 @@ export function ChatsContent({ feedId }) {
   //テストログインID⇨テストでは切り替えてください
   const logedInUserId = "-ND6W54zApUpQdX6I5bY";
   const logedInUsername = "Yamato Sayaka";
-    // const logedInUserId = "-ND6WFQd0XdMDvvjHGU0";
-    // const logedInUsername = "Masato";
+  // const logedInUserId = "-ND6WFQd0XdMDvvjHGU0";
+  // const logedInUsername = "Masato";
 
   //   const dataRead = useDataRead;
   //   const logedInUser = dataRead("users", logedInUserId);
@@ -113,25 +113,29 @@ export function ChatsContent({ feedId }) {
               key={key}
               className={item.resUserId === logedInUserId ? "right" : "left"}
             >
-              <p>{item.resUsername}</p>
-              <p>{item.content}</p>
+              <p className="chat_send_user">{item.resUsername}</p>
+              <p className="chat_send_text">{item.content}</p>
             </div>
           ))}
       </div>
-      <div>
-        {/* <Input
+      <div className="send_feeld">
+        <div className="send_form">
+          {/* <Input
           id="resUserId"
           size="xs"
           value={userId}
           onChange={(e) => setUserID(e.target.value)}
         /> */}
-        <Input
-          placeholder="フィードバックを送信"
-          value={inputChatText}
-          onChange={(e) => setInputChatText(e.target.value)}
-          size="xs"
-        />
-        <button onClick={onClickSend}>送信</button>
+          <Input
+            placeholder="フィードバックを送信"
+            value={inputChatText}
+            onChange={(e) => setInputChatText(e.target.value)}
+            w={"85%"}
+          />
+          <button onClick={onClickSend} className="chat_send_button">
+            送信
+          </button>
+        </div>
       </div>
     </>
   );

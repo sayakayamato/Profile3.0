@@ -1,6 +1,7 @@
 .service_name{
     padding: 16px;
     font-size: 20px;
+    color: white;
 }
 
 .top_profile_icon{
@@ -10,7 +11,8 @@
 
 .home_greed{
     margin-top: 100px;
-    
+    font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+    color: white;
 }
 
 .home_greed_bold{

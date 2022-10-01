@@ -1,10 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { Textarea, Box, Flex } from "@chakra-ui/react";
+import { Textarea, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 import { Link } from "react-router-dom";
 import { useDataCreate } from "./hooks/useDataCreate";
+import { Text } from "@chakra-ui/react";
+
+// import { useNavigate } from "react-router-dom"
 
 import { TwitterIcon, TwitterShareButton } from "react-share";
 
@@ -108,31 +111,43 @@ export function CollectFeedback() {
   //ボタンを押したら送信モーダル
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  //シェアボタン
+  //モーダル閉じたらフィードに移動
+  // const navigate = useNavigate()
+  // const ModalClose = () => {
+  //       navigate("/FeedContents")
+  // }
 
   return (
     <>
       <div className="collect_feedback_top">
         <Flex>
-          <Box p="4" bg="" className="return_button">
-            <Link to="/">
-              <ChevronLeftIcon boxSize={6} />
-            </Link>
-          </Box>
-          <Box p="4" bg="" className="profile_setting">
+          {/* <Box p="4" bg="" className="return_button"> */}
+          <Link to="/">
+            <ChevronLeftIcon boxSize={6} className="return_button" />
+          </Link>
+          {/* </Box> */}
+          <Text fontSize="xl" className="collect_feedback_title">
             フィードバック募集画面
-          </Box>
+          </Text>
         </Flex>
       </div>
-      <Textarea
-        value={value}
-        onChange={handleInputChange}
-        placeholder="例):私の長所を教えてください！"
-        size="sm"
-      />
-      <button className="collect_feedback_button" onClick={registerNewQuestion}>
-        送信
-      </button>
+      <div className="collect_feedback_textarea">
+        <Textarea
+          value={value}
+          onChange={handleInputChange}
+          placeholder="例):私の長所を教えてください！"
+          width={"80vw"}
+          height={"20vh"}
+        />
+      </div>
+      <div className="collect_feedback_button_div">
+        <button
+          className="collect_feedback_button"
+          onClick={registerNewQuestion}
+        >
+          送信
+        </button>
+      </div>
 
       {/* 送信ボタンを押したら共有モーダル表示 */}
       <Modal isOpen={isOpen} onClose={onClose}>
